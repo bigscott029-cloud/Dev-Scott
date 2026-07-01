@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0b0f19;
+  --color-bg-card: #131a2a;
+  --color-accent: #3b82f6;
+  --color-accent-secondary: #22c55e;
+  --color-text: #ffffff;
+  --color-muted: #94a3b8;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Light theme overrides */
+html.light {
+  --color-bg-primary: #f8fafc;
+  --color-bg-card: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in srgb, var(--color-bg-card) 75%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #60a5fa 50%, var(--color-accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card-shadow {
+    box-shadow:
+      0 4px 24px color-mix(in srgb, #000 25%, transparent),
+      0 1px 0 color-mix(in srgb, var(--color-text) 5%, transparent) inset;
+  }
+
+  .section-padding {
+    @apply px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+  }
+}
