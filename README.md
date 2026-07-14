@@ -46,13 +46,13 @@ Replace that file to update the public resume.
 
 ## Contact Form
 
-The contact form submits without redirecting through FormSubmit's AJAX endpoint:
+The contact form submits without redirecting through a hidden iframe to FormSubmit:
 
 ```txt
-https://formsubmit.co/ajax/chikeeluem171@gmail.com
+https://formsubmit.co/chikeeluem171@gmail.com
 ```
 
-On first use, FormSubmit may send an activation email to confirm the address. After that, client messages submit in-page and show a success popup.
+On first use, FormSubmit may send an activation email to confirm the address. After that, client messages submit in-page and show a success popup without moving the visitor away from the portfolio.
 
 ## Auto-Updating Metrics
 

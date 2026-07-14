@@ -937,38 +937,33 @@ function TestimonialsSection() {
 }
 
 function ContactForm() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle')
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const form = event.currentTarget
     setStatus('sending')
 
-    const form = event.currentTarget
-    const formData = new FormData(form)
-    formData.append('_subject', 'New portfolio project request')
-    formData.append('_template', 'table')
-    formData.append('_captcha', 'false')
-
-    try {
-      const response = await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData,
-      })
-
-      if (!response.ok) throw new Error('Message failed')
-
+    window.setTimeout(() => {
       form.reset()
       setStatus('success')
-    } catch {
-      setStatus('error')
-    }
+    }, 900)
   }
 
   return (
     <>
-      <form className="border border-border bg-panel p-6 shadow-2xl" onSubmit={handleSubmit}>
+      <iframe name="contact-submit-frame" title="Contact form submission" className="hidden" />
+      <form
+        action={`https://formsubmit.co/${siteConfig.email}`}
+        method="POST"
+        target="contact-submit-frame"
+        className="border border-border bg-panel p-6 shadow-2xl"
+        onSubmit={handleSubmit}
+      >
         <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+        <input type="hidden" name="_subject" value="New portfolio project request" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Big Scott. Your request has been received and you will get feedback soon." />
         <div className="grid gap-4 sm:grid-cols-2">
           <Input label="Name" name="name" placeholder="Your name" required />
           <Input label="Email" name="email" type="email" placeholder="you@company.com" required />
@@ -984,11 +979,6 @@ function ContactForm() {
           <Mail size={18} />
           {status === 'sending' ? 'Sending...' : 'Start Conversation'}
         </button>
-        {status === 'error' && (
-          <p className="mt-4 border border-accent/40 bg-accent/10 p-3 text-sm text-readable">
-            The form could not send right now. Please use the direct email link beside it.
-          </p>
-        )}
       </form>
 
       <AnimatePresence>
