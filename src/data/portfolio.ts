@@ -108,7 +108,7 @@ export const projects = [
       'Developing a student-focused digital ecosystem connecting campus communities through social content, engagement, and business opportunities.',
     status: 'In Development' as const,
     tags: ['React', 'Node.js', 'Mobile', 'Community'],
-    gradient: 'from-blue-500/20 to-purple-500/20',
+    gradient: 'from-red-900/20 to-zinc-900/20',
   },
   {
     title: 'ADB Hydra',
@@ -116,7 +116,7 @@ export const projects = [
       'An intelligent multi-device ADB WiFi management system featuring automatic discovery, persistent wireless connections, and self-healing recovery mechanisms.',
     status: 'Completed' as const,
     tags: ['Python', 'Automation', 'Networking', 'CLI'],
-    gradient: 'from-emerald-500/20 to-cyan-500/20',
+    gradient: 'from-red-800/20 to-neutral-900/20',
   },
   {
     title: 'AutoChat CLI',
@@ -124,7 +124,7 @@ export const projects = [
       'A command-line automation framework for project initialization, folder creation, and workflow automation.',
     status: 'Completed' as const,
     tags: ['Node.js', 'CLI', 'Automation', 'DevTools'],
-    gradient: 'from-orange-500/20 to-amber-500/20',
+    gradient: 'from-red-950/20 to-stone-900/20',
   },
   {
     title: 'Telegram Automation',
@@ -132,7 +132,7 @@ export const projects = [
       'Python automation systems integrating Telegram APIs for workflow automation, messaging, and repetitive operational tasks.',
     status: 'Completed' as const,
     tags: ['Python', 'Telegram API', 'Bots', 'Workflows'],
-    gradient: 'from-sky-500/20 to-indigo-500/20',
+    gradient: 'from-red-900/20 to-black/20',
   },
 ]
 

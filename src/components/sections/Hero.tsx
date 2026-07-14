@@ -55,7 +55,7 @@ export function Hero() {
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute bottom-0 left-1/3 h-[350px] w-[350px] rounded-full bg-purple-500/10 blur-[100px]"
+          className="absolute bottom-0 left-1/3 h-[350px] w-[350px] rounded-full bg-accent/10 blur-[100px]"
           animate={{ x: [0, 30, 0], y: [0, -40, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />

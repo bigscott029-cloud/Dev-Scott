@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050505"/>
+  <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M200 0V630M400 0V630M600 0V630M800 0V630M1000 0V630" stroke="white" stroke-opacity=".08"/>
+  <circle cx="980" cy="120" r="260" fill="#61DAFB" fill-opacity=".12"/>
+  <circle cx="210" cy="520" r="300" fill="#C1121F" fill-opacity=".18"/>
+  <rect x="74" y="72" width="1052" height="486" stroke="white" stroke-opacity=".14"/>
+  <rect x="102" y="100" width="70" height="70" fill="#C1121F" fill-opacity=".22" stroke="#E63946"/>
+  <text x="102" y="260" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800">Big Scott</text>
+  <text x="102" y="335" fill="#D7D7D7" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="600">Software Engineer · Automation Specialist</text>
+  <text x="102" y="405" fill="#61DAFB" font-family="JetBrains Mono, monospace" font-size="25" font-weight="700">Full-stack systems · Python automation · Product platforms</text>
+  <text x="102" y="488" fill="#FFFFFF" fill-opacity=".84" font-family="Inter, Arial, sans-serif" font-size="28">I build software systems that turn ideas into useful products.</text>
+</svg>
