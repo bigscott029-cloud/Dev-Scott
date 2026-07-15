@@ -66,9 +66,9 @@ const projects = [
     images: {
       hero: '/projects/campushub/hero.svg',
       gallery: [
-        { label: 'Product Screen', src: '/projects/campushub/product-screen.svg', note: 'Replace with a screenshot of the main CampusHUB interface.' },
-        { label: 'Architecture Diagram', src: '/projects/campushub/architecture.svg', note: 'Replace with a platform architecture or user-flow diagram.' },
-        { label: 'Deployment Notes', src: '/projects/campushub/deployment.svg', note: 'Replace with deployment, testing, or maintenance screenshots.' },
+        { label: 'Product Screen', src: '/projects/campushub/product-screen.svg', note: 'Here is a screenshot of the main CampusHUB interface.' },
+        { label: 'Architecture Diagram', src: '/projects/campushub/architecture.svg', note: 'Here is a platform architecture or user-flow diagram.' },
+        { label: 'Deployment Notes', src: '/projects/campushub/deployment.svg', note: 'Here is deployment, testing, or maintenance screenshots.' },
       ],
     },
     summary:
@@ -117,9 +117,9 @@ const projects = [
     images: {
       hero: '/projects/telegram-automation-platform/hero.svg',
       gallery: [
-        { label: 'Bot Workflow', src: '/projects/telegram-automation-platform/bot-workflow.svg', note: 'Replace with a safe screenshot of the Telegram bot flow.' },
-        { label: 'Automation Map', src: '/projects/telegram-automation-platform/automation-map.svg', note: 'Replace with a workflow diagram showing triggers and responses.' },
-        { label: 'Operations View', src: '/projects/telegram-automation-platform/operations-view.svg', note: 'Replace with logs, testing, or redacted transaction workflow media.' },
+        { label: 'Bot Workflow', src: '/projects/telegram-automation-platform/bot-workflow.svg', note: 'Here is a safe screenshot of the Telegram bot flow.' },
+        { label: 'Automation Map', src: '/projects/telegram-automation-platform/automation-map.svg', note: 'Here is a workflow diagram showing triggers and responses.' },
+        { label: 'Operations View', src: '/projects/telegram-automation-platform/operations-view.svg', note: 'Here is a view of logs, testing, or redacted transaction workflow media.' },
       ],
     },
     summary:
@@ -168,9 +168,9 @@ const projects = [
     images: {
       hero: '/projects/adb-hydra/hero.svg',
       gallery: [
-        { label: 'CLI Screen', src: '/projects/adb-hydra/cli-screen.svg', note: 'Replace with a terminal screenshot of ADB Hydra running.' },
-        { label: 'Device Flow', src: '/projects/adb-hydra/device-flow.svg', note: 'Replace with a diagram of discovery, connection, and recovery.' },
-        { label: 'Testing Capture', src: '/projects/adb-hydra/testing-capture.svg', note: 'Replace with Android device testing or ADB workflow evidence.' },
+        { label: 'CLI Screen', src: '/projects/adb-hydra/cli-screen.svg', note: 'Here is a terminal screenshot of ADB Hydra running.' },
+        { label: 'Device Flow', src: '/projects/adb-hydra/device-flow.svg', note: 'Here is a diagram of discovery, connection, and recovery.' },
+        { label: 'Testing Capture', src: '/projects/adb-hydra/testing-capture.svg', note: 'Here is a view of  Android device testing or ADB workflow evidence.' },
       ],
     },
     summary:
@@ -219,9 +219,9 @@ const projects = [
     images: {
       hero: '/projects/valuxchange/hero.svg',
       gallery: [
-        { label: 'Landing Screen', src: '/projects/valuxchange/landing-screen.svg', note: 'Replace with a screenshot of the ValuXchange homepage or service page.' },
-        { label: 'Transaction Flow', src: '/projects/valuxchange/transaction-flow.svg', note: 'Replace with a diagram of inquiry, exchange, and follow-up flow.' },
-        { label: 'Business Context', src: '/projects/valuxchange/business-context.svg', note: 'Replace with supporting service, admin, or deployment media.' },
+        { label: 'Landing Screen', src: '/projects/valuxchange/landing-screen.svg', note: 'Here is a screenshot of the ValuXchange homepage or service page.' },
+        { label: 'Transaction Flow', src: '/projects/valuxchange/transaction-flow.svg', note: 'Here is a diagram of inquiry, exchange, and follow-up flow.' },
+        { label: 'Business Context', src: '/projects/valuxchange/business-context.svg', note: 'Here is a view of the supporting service, admin, or deployment media.' },
       ],
     },
     summary:
