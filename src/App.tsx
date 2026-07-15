@@ -623,7 +623,7 @@ function ProjectsPage() {
     <PageFrame
       eyebrow="Projects"
       title="Resume-backed case studies from real-world solutions provided."
-      description="These are public projects from whcih a quick link and summary can alos be found in the resume. View any page to view the work covering the problem, solution, role, architecture, features, visuals, challenges, lessons, and roadmap."
+      description="These are public projects from whcih a quick link and summary can also be found in the resume. View any page to view the work covering the problem, solution, role, architecture, features, visuals, challenges, lessons, and roadmap."
     >
       <div className="grid gap-6">
         {projects.map((project, index) => (
