@@ -33,6 +33,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa'
 import { siteConfig } from './config/site'
+import AdminCMS, { AdminLoginPage } from './admin/admin'
 import automationClient from "./assets/avatar/automation-client.png"
 import recruiter from "./assets/avatar/recruiter.png"
 import stakeholder from "./assets/avatar/stakeholder.png"
@@ -332,10 +333,20 @@ const techStack = [
 ]
 
 function getPath() {
-  return window.location.hash.replace(/^#/, '') || '/'
+  const hashPath = window.location.hash.replace(/^#/, '')
+  if (hashPath && hashPath !== '/') {
+    return hashPath
+  }
+
+  const pathname = window.location.pathname
+  if (pathname && pathname !== '/' && pathname !== '/index.html') {
+    return pathname
+  }
+
+  return '/'
 }
 
-function useHashPath() {
+function useRoutePath() {
   const [path, setPath] = useState(getPath)
 
   useEffect(() => {
@@ -343,15 +354,29 @@ function useHashPath() {
       setPath(getPath())
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
+
     window.addEventListener('hashchange', update)
-    return () => window.removeEventListener('hashchange', update)
+    window.addEventListener('popstate', update)
+
+    return () => {
+      window.removeEventListener('hashchange', update)
+      window.removeEventListener('popstate', update)
+    }
   }, [])
 
   return path
 }
 
 function navigate(path: string) {
-  window.location.hash = path
+  const nextPath = path.startsWith('/') ? path : `/${path}`
+
+  if (window.location.hash) {
+    window.location.hash = nextPath
+    return
+  }
+
+  window.history.pushState({}, '', nextPath)
+  window.dispatchEvent(new Event('popstate'))
 }
 
 function yearsSince(startYear: number) {
@@ -364,7 +389,7 @@ function projectYearLabel(project: (typeof projects)[number]) {
 }
 
 export default function App() {
-  const path = useHashPath()
+  const path = useRoutePath()
 
   return (
     <div className="min-h-screen bg-bg-primary text-text">
@@ -388,7 +413,21 @@ export default function App() {
   )
 }
 
+function AdminGate() {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return window.localStorage.getItem('dev_portfolio_admin_auth') === 'true'
+  })
+
+  if (isAuthenticated) {
+    return <AdminCMS />
+  }
+
+  return <AdminLoginPage onSuccess={() => setIsAuthenticated(true)} />
+}
+
 function Page({ path }: { path: string }) {
+  if (path === '/admin') return <AdminGate />
   if (path === '/projects') return <ProjectsPage />
   if (path.startsWith('/projects/')) return <ProjectDetailPage slug={path.split('/').at(-1) ?? ''} />
   if (path === '/about') return <AboutPage />
